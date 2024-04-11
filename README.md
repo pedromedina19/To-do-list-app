@@ -64,6 +64,37 @@ Exemplo de resposta:
 }
 ```
 
+### `PUT /list/order/{id}`
+
+Atualiza a ordem de uma lista existente pelo ID.
+
+**Parâmetros do corpo da requisição:**
+
+- `listOrder` (obrigatório): A nova ordem da lista.
+
+**Exemplo de requisição:**
+
+```json
+{
+    "listOrder": 1
+}
+```
+
+**Resposta:**
+
+Retorna a lista atualizada com status HTTP 200 (OK).
+
+**Exemplo de resposta:**
+
+```json
+{
+    "id": 1,
+    "title": "Título atualizado",
+    "listOrder": 1,
+    "items": []
+}
+```
+
 ### GET /list
 
 Retorna todas as listas.
@@ -186,6 +217,44 @@ Resposta:
 Retorna o item atualizado com status HTTP 200 (OK).
 
 Exemplo de resposta:
+
+```json
+{
+    "id": 1,
+    "title": "Título atualizado",
+    "description": null,
+    "startDate": null,
+    "finalDate": null,
+    "itemOrder": 1,
+    "list": {
+        "id": 1,
+        "title": "Título atualizado",
+        "listOrder": 0
+    }
+}
+```
+
+### `PUT /items/order/{id}`
+
+Atualiza a ordem de um item existente pelo ID.
+
+**Parâmetros do corpo da requisição:**
+
+- `itemOrder` (obrigatório): A nova ordem do item.
+
+**Exemplo de requisição:**
+
+```json
+{
+    "itemOrder": 1
+}
+```
+
+**Resposta:**
+
+Retorna o item atualizado com status HTTP 200 (OK).
+
+**Exemplo de resposta:**
 
 ```json
 {
