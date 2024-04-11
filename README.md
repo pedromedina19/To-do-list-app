@@ -3,7 +3,7 @@
 
 ## Listas
 
-### POST /list
+### `POST /list`
 
 Cria uma nova lista.
 
@@ -34,7 +34,7 @@ Exemplo de resposta:
 }
 ```
 
-### PUT /list/{id}
+### `PUT /list/{id}`
 
 Atualiza uma lista existente pelo ID.
 
