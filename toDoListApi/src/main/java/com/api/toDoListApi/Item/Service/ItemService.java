@@ -32,8 +32,13 @@ public class ItemService {
         // Defina o campo list com a instância da lista
         newItem.setList(list);
 
+        // Defina o campo itemOrder com base no número atual de itens na lista
+        int itemCount = itemRepository.countByListId(createItemDto.getListId());
+        newItem.setitemOrder(itemCount);
+
         return itemRepository.save(newItem);
     }
+
 
 
     @Transactional
@@ -43,8 +48,12 @@ public class ItemService {
         existingItem.setDescription(updateItemDto.getDescription());
         existingItem.setStartDate(updateItemDto.getStartDate());
         existingItem.setFinalDate(updateItemDto.getFinalDate());
+        if (updateItemDto.getItemOrder() != null) {
+            existingItem.setitemOrder(updateItemDto.getItemOrder());
+        }
         return itemRepository.save(existingItem);
     }
+
 
     public ItemEntity getOneItem(Long id) {
         return itemRepository.findById(id).orElseThrow(() -> new NotFoundException("Item não encontrado."));

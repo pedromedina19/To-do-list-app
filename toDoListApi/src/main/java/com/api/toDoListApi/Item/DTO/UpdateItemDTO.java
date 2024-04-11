@@ -7,6 +7,7 @@ public class UpdateItemDTO {
     private String description;
     private Date startDate;
     private Date finalDate;
+    private Integer itemOrder;
 
     public String getTitleItem() {
         return titleItem;
@@ -38,5 +39,12 @@ public class UpdateItemDTO {
 
     public void setFinalDate(Date finalDate) {
         this.finalDate = finalDate;
+    }
+    public Integer getItemOrder() {
+        return itemOrder;
+    }
+
+    public void setItemOrder(Integer itemOrder) {
+        this.itemOrder = itemOrder;
     }
 }

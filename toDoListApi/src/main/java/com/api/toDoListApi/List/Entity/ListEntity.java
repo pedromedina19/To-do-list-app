@@ -2,6 +2,7 @@ package com.api.toDoListApi.List.Entity;
 
 
 import com.api.toDoListApi.Item.Entity.ItemEntity;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public class ListEntity {
     @Column(name = "listOrder")
     private Integer listOrder;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "list", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ItemEntity> items;
 

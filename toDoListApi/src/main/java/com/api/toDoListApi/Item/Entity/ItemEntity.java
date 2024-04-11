@@ -2,6 +2,7 @@ package com.api.toDoListApi.Item.Entity;
 
 
 import com.api.toDoListApi.List.Entity.ListEntity;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -28,6 +29,7 @@ public class ItemEntity {
     @Column(name = "itemOrder")
     private Integer itemOrder;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "list_id")
     private ListEntity list;

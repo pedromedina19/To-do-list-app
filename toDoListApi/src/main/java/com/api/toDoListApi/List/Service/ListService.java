@@ -30,8 +30,12 @@ public class ListService {
     public ListEntity updateList(Long id, UpdateListDTO updateListDto) {
         ListEntity existingList = listRepository.findById(id).orElseThrow(() -> new NotFoundException("Lista não encontrada."));
         existingList.setTitle(updateListDto.getTitle());
+        if (updateListDto.getListOrder() != null) {
+            existingList.setlistOrder(updateListDto.getListOrder());
+        }
         return listRepository.save(existingList);
     }
+
 
     public List<ListEntity> getAllLists() {
         return listRepository.findAll();
