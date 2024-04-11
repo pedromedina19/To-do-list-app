@@ -7,11 +7,11 @@
 
 Cria uma nova lista.
 
-**Parâmetros do corpo da requisição:**
+Parâmetros do corpo da requisição:
 
 - `title` (obrigatório): O título da lista.
 
-**Exemplo de requisição:**
+Exemplo de requisição:
 
 ```json
 {
@@ -19,11 +19,11 @@ Cria uma nova lista.
 }
 ```
 
-**Resposta:**
+Resposta:
 
 Retorna a lista criada com status HTTP 201 (Created).
 
-**Exemplo de resposta:**
+Exemplo de resposta:
 
 ```json
 {
@@ -38,11 +38,11 @@ Retorna a lista criada com status HTTP 201 (Created).
 
 Atualiza uma lista existente pelo ID.
 
-**Parâmetros do corpo da requisição:**
+Parâmetros do corpo da requisição:
 
 - `title` (obrigatório): O novo título da lista.
 
-**Exemplo de requisição:**
+Exemplo de requisição:
 
 ```json
 {
@@ -50,11 +50,11 @@ Atualiza uma lista existente pelo ID.
 }
 ```
 
-**Resposta:**
+Resposta:
 
 Retorna a lista atualizada com status HTTP 200 (OK).
 
-**Exemplo de resposta:**
+Exemplo de resposta:
 
 ```json
 {
@@ -69,11 +69,11 @@ Retorna a lista atualizada com status HTTP 200 (OK).
 
 Retorna todas as listas.
 
-**Resposta:**
+Resposta:
 
 Retorna uma lista de todas as listas com status HTTP 200 (OK).
 
-**Exemplo de resposta:**
+Exemplo de resposta:
 
 ```json
 [
@@ -96,11 +96,11 @@ Retorna uma lista de todas as listas com status HTTP 200 (OK).
 
 Retorna uma lista específica pelo ID.
 
-**Resposta:**
+Resposta:
 
 Retorna a lista solicitada com status HTTP 200 (OK).
 
-**Exemplo de resposta:**
+Exemplo de resposta:
 
 ```json
 {
@@ -115,7 +115,7 @@ Retorna a lista solicitada com status HTTP 200 (OK).
 
 Exclui uma lista específica pelo ID.
 
-**Resposta:**
+Resposta:
 
 Retorna um status 204 (No Content) se a lista for excluída com sucesso.
 
@@ -125,12 +125,12 @@ Retorna um status 204 (No Content) se a lista for excluída com sucesso.
 
 Cria um novo item.
 
-**Parâmetros do corpo da requisição:**
+Parâmetros do corpo da requisição:
 
 - `titleItem` (obrigatório): O título do item.
 - `listId` (obrigatório): O ID da lista à qual o item pertence.
 
-**Exemplo de requisição:**
+Exemplo de requisição:
 
 ```json
 {
@@ -139,11 +139,11 @@ Cria um novo item.
 }
 ```
 
-**Resposta:**
+Resposta:
 
 Retorna o item criado com status HTTP 201 (Created).
 
-**Exemplo de resposta:**
+Exemplo de resposta:
 
 ```json
 {
@@ -165,7 +165,7 @@ Retorna o item criado com status HTTP 201 (Created).
 
 Atualiza um item existente pelo ID.
 
-**Parâmetros do corpo da requisição:**
+Parâmetros do corpo da requisição:
 
 - `titleItem` (opcional): O novo título do item.
 - `description` (opcional): A nova descrição do item.
@@ -173,7 +173,7 @@ Atualiza um item existente pelo ID.
 - `finalDate` (opcional): A nova data final do item.
 - `itemOrder` (opcional): A nova ordem do item.
 
-**Exemplo de requisição:**
+Exemplo de requisição:
 
 ```json
 {
@@ -182,11 +182,11 @@ Atualiza um item existente pelo ID.
 }
 ```
 
-**Resposta:**
+Resposta:
 
 Retorna o item atualizado com status HTTP 200 (OK).
 
-**Exemplo de resposta:**
+Exemplo de resposta:
 
 ```json
 {
@@ -208,11 +208,11 @@ Retorna o item atualizado com status HTTP 200 (OK).
 
 Retorna um item específico pelo ID.
 
-**Resposta:**
+Resposta:
 
 Retorna o item solicitado com status HTTP 200 (OK).
 
-**Exemplo de resposta:**
+Exemplo de resposta:
 
 ```json
 {
@@ -234,7 +234,7 @@ Retorna o item solicitado com status HTTP 200 (OK).
 
 Exclui um item específico pelo ID.
 
-**Resposta:**
+Resposta:
 
 Retorna um status 204 (No Content) se o item for excluído com sucesso.
 ```
