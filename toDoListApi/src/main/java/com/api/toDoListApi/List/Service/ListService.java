@@ -30,10 +30,35 @@ public class ListService {
     public ListEntity updateList(Long id, UpdateListDTO updateListDto) {
         ListEntity existingList = listRepository.findById(id).orElseThrow(() -> new NotFoundException("Lista não encontrada."));
         existingList.setTitle(updateListDto.getTitle());
-        if (updateListDto.getListOrder() != null) {
-            existingList.setlistOrder(updateListDto.getListOrder());
-        }
         return listRepository.save(existingList);
+    }
+
+    @Transactional
+    public ListEntity updateListOrder(Long id, Integer listOrder) {
+        // Validação da entrada do usuário
+        if (listOrder < 0) {
+            throw new IllegalArgumentException("A ordem da lista não pode ser negativa.");
+        }
+
+        // Busca a lista existente pelo ID
+        ListEntity existingList = listRepository.findById(id).orElseThrow(() -> new NotFoundException("Lista não encontrada."));
+
+        // Atualiza a ordem da lista
+        existingList.setlistOrder(listOrder);
+
+        // Salva a lista atualizada no repositório
+        ListEntity updatedList = listRepository.save(existingList);
+
+        // Lida com conflitos de ordem
+        List<ListEntity> sameOrderLists = listRepository.findByListOrder(listOrder);
+        for (ListEntity list : sameOrderLists) {
+            if (!list.getId().equals(id)) {
+                list.setlistOrder(list.getlistOrder() + 1);
+                listRepository.save(list);
+            }
+        }
+
+        return updatedList;
     }
 
 

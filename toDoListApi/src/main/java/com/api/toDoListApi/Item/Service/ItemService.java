@@ -10,6 +10,8 @@ import com.api.toDoListApi.List.Repository.ListRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ItemService {
     private final ItemRepository itemRepository;
@@ -48,11 +50,37 @@ public class ItemService {
         existingItem.setDescription(updateItemDto.getDescription());
         existingItem.setStartDate(updateItemDto.getStartDate());
         existingItem.setFinalDate(updateItemDto.getFinalDate());
-        if (updateItemDto.getItemOrder() != null) {
-            existingItem.setitemOrder(updateItemDto.getItemOrder());
-        }
         return itemRepository.save(existingItem);
     }
+    @Transactional
+    public ItemEntity updateItemOrder(Long id, Integer itemOrder) {
+        // Validação da entrada do usuário
+        if (itemOrder < 0) {
+            throw new IllegalArgumentException("A ordem do item não pode ser negativa.");
+        }
+
+        // Busca o item existente pelo ID
+        ItemEntity existingItem = itemRepository.findById(id).orElseThrow(() -> new NotFoundException("Item não encontrado."));
+
+        // Atualiza a ordem do item
+        existingItem.setitemOrder(itemOrder);
+
+        // Salva o item atualizado no repositório
+        ItemEntity updatedItem = itemRepository.save(existingItem);
+
+        // Lida com conflitos de ordem
+        List<ItemEntity> sameOrderItems = itemRepository.findByItemOrder(itemOrder);
+        for (ItemEntity item : sameOrderItems) {
+            if (!item.getId().equals(id)) {
+                item.setitemOrder(item.getitemOrder() + 1);
+                itemRepository.save(item);
+            }
+        }
+
+        return updatedItem;
+    }
+
+
 
 
     public ItemEntity getOneItem(Long id) {

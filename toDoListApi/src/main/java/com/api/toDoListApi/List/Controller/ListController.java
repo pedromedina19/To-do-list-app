@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/list")
@@ -31,6 +32,13 @@ public class ListController {
         ListEntity updatedList = listService.updateList(id, updateListDto);
         return ResponseEntity.ok(updatedList);
     }
+    @PutMapping("/order/{id}")
+    public ResponseEntity<ListEntity> updateListOrder(@PathVariable Long id, @RequestBody Map<String, Integer> json) {
+        ListEntity updatedList = listService.updateListOrder(id, json.get("listOrder"));
+        return ResponseEntity.ok(updatedList);
+    }
+
+
 
     @GetMapping
     public ResponseEntity<List<ListEntity>> getAllLists() {

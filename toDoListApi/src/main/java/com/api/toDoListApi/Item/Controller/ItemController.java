@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/item")
 public class ItemController {
@@ -27,6 +29,11 @@ public class ItemController {
     @PutMapping("/{id}")
     public ResponseEntity<ItemEntity> updateItem(@PathVariable Long id, @Valid @RequestBody UpdateItemDTO updateItemDto) {
         ItemEntity updatedItem = itemService.updateItem(id, updateItemDto);
+        return ResponseEntity.ok(updatedItem);
+    }
+    @PutMapping("/order/{id}")
+    public ResponseEntity<ItemEntity> updateItemOrder(@PathVariable Long id, @RequestBody Map<String, Integer> json) {
+        ItemEntity updatedItem = itemService.updateItemOrder(id, json.get("itemOrder"));
         return ResponseEntity.ok(updatedItem);
     }
 

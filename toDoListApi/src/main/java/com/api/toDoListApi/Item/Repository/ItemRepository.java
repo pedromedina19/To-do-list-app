@@ -12,4 +12,6 @@ public interface ItemRepository extends JpaRepository<ItemEntity, Long> {
 
     @Query("SELECT i FROM ItemEntity i WHERE i.list.id = :listId ORDER BY i.itemOrder ASC")
     List<ItemEntity> findByListIdOrderByOrderAsc(@Param("listId") Long listId);
+
+    List<ItemEntity> findByItemOrder(Integer itemOrder);
 }
