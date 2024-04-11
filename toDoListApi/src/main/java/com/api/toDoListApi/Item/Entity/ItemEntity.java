@@ -1,14 +1,14 @@
 package com.api.toDoListApi.Item.Entity;
 
 
-import com.api.toDoListApi.List.Entity.listEntity;
+import com.api.toDoListApi.List.Entity.ListEntity;
 import jakarta.persistence.*;
 
 import java.util.Date;
 
 @Entity
 @Table(name = "items")
-public class itemEntity {
+public class ItemEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
@@ -30,7 +30,7 @@ public class itemEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "list_id")
-    private listEntity list;
+    private ListEntity list;
 
     public Long getId() {
         return id;
@@ -80,11 +80,11 @@ public class itemEntity {
         this.itemOrder = itemOrder;
     }
 
-    public listEntity getList() {
+    public ListEntity getList() {
         return list;
     }
 
-    public void setList(listEntity list) {
+    public void setList(ListEntity list) {
         this.list = list;
     }
 }

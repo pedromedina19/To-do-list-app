@@ -1,14 +1,14 @@
 package com.api.toDoListApi.List.Entity;
 
 
-import com.api.toDoListApi.Item.Entity.itemEntity;
+import com.api.toDoListApi.Item.Entity.ItemEntity;
 import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
 @Table(name = "lists")
-public class listEntity {
+public class ListEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
@@ -20,7 +20,7 @@ public class listEntity {
     private Integer listOrder;
 
     @OneToMany(mappedBy = "list", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<itemEntity> items;
+    private List<ItemEntity> items;
 
     public Long getId() {
         return id;
@@ -46,11 +46,11 @@ public class listEntity {
         this.listOrder = listOrder;
     }
 
-    public List<itemEntity> getItems() {
+    public List<ItemEntity> getItems() {
         return items;
     }
 
-    public void setItems(List<itemEntity> items) {
+    public void setItems(List<ItemEntity> items) {
         this.items = items;
     }
 }

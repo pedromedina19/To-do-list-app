@@ -3,7 +3,7 @@ package com.api.toDoListApi.Item.DTO;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
-public class createItemDTO {
+public class CreateItemDTO {
     @NotEmpty(message = "O título do item não pode ser vazio.")
     private String titleItem;
 

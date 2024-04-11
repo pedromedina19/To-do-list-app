@@ -2,7 +2,7 @@ package com.api.toDoListApi.Item.DTO;
 
 import java.util.Date;
 
-public class updateItemDTO {
+public class UpdateItemDTO {
     private String titleItem;
     private String description;
     private Date startDate;

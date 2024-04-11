@@ -1,10 +1,6 @@
 package com.api.toDoListApi.List.DTO;
 
-
-import jakarta.validation.constraints.NotEmpty;
-
-public class createListDTO {
-    @NotEmpty(message = "O título da lista não pode ser vazio.")
+public class UpdateListDTO {
     private String title;
 
     public String getTitle() {
