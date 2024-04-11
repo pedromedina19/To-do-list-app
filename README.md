@@ -1,9 +1,8 @@
-```markdown
 # Documentação da API ToDoList
 
 ## Listas
 
-### `POST /list`
+### POST /list
 
 Cria uma nova lista.
 
@@ -34,7 +33,7 @@ Exemplo de resposta:
 }
 ```
 
-### `PUT /list/{id}`
+### PUT /list/{id}
 
 Atualiza uma lista existente pelo ID.
 
@@ -237,4 +236,3 @@ Exclui um item específico pelo ID.
 Resposta:
 
 Retorna um status 204 (No Content) se o item for excluído com sucesso.
-```
