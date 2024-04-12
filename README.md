@@ -70,14 +70,17 @@ Atualiza a ordem de uma lista existente pelo ID.
 
 **Parâmetros do corpo da requisição:**
 
-- `listOrder` (obrigatório): A nova ordem da lista.
+- `currentOrder` (obrigatório): Ordem atual.
+- `targetOrder` (obrigatório): Ordem desejada.
 
 **Exemplo de requisição:**
 
 ```json
 {
-    "listOrder": 1
+    "currentOrder": 1,
+    "targetOrder": 2
 }
+
 ```
 
 **Resposta:**
@@ -240,13 +243,19 @@ Atualiza a ordem de um item existente pelo ID.
 
 **Parâmetros do corpo da requisição:**
 
-- `itemOrder` (obrigatório): A nova ordem do item.
+- `currentOrder` (obrigatório): Ordem atual.
+- `targetOrder` (obrigatório): Ordem desejada.
+- `currentListId` (obrigatório): Id da lista atual.
+- `targetListId` (obrigatório): Id da lista desejada.
 
 **Exemplo de requisição:**
 
 ```json
 {
-    "itemOrder": 1
+    "currentOrder": 1,
+    "targetOrder": 2,
+    "currentListId": 1,
+    "targetListId": 2
 }
 ```
 
