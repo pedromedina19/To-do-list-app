@@ -53,12 +53,12 @@ export default function AddItem({ id, order }: AddItemProps) {
             />
             <IconButton
               style={{ height: '40px', marginLeft: '5px' }}
-              sx={{ color: '#ff700a' }}
+              sx={{ color: '#0a70ff' }}
               onClick={() => {
                 handleSubmit();
               }}
             >
-              <AddIcon fontSize='small' sx={{ color: '#ff700a' }} />
+              <AddIcon fontSize='small' sx={{ color: '#0a70ff' }} />
             </IconButton>
           </>
         );

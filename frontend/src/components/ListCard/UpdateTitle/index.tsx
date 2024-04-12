@@ -48,13 +48,13 @@ export default function UpdateTitle({ id, titleList, setLists, setIsEditing }: U
             />
             <IconButton
               style={{ height: '40px', marginLeft: '2px', marginRight: '5px' }}
-              sx={{ color: '#ff700a' }}
+              sx={{ color: '#0a70ff' }}
               size='small'
               onClick={() => {
                 handleSubmit();
               }}
             >
-              <CheckCircleIcon fontSize='small' sx={{ color: '#ff700a' }} />
+              <CheckCircleIcon fontSize='small' sx={{ color: '#0a70ff' }} />
             </IconButton>
           </>
         );

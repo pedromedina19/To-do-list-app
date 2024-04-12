@@ -8,7 +8,7 @@ import ChecklistIcon from '@mui/icons-material/Checklist';
 
 export default function Navbar() {
   return (
-    <AppBar position='static' sx={{ backgroundColor: '#ff700a' }}>
+    <AppBar position='static' sx={{ backgroundColor: '#0a70ff' }}>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
           <ChecklistIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color: 'white' }} />
@@ -27,7 +27,7 @@ export default function Navbar() {
               textDecoration: 'none',
             }}
           >
-            TO DO LIST
+            Lista de tarefas
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }} />

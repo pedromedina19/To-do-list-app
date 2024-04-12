@@ -45,12 +45,12 @@ export default function AddList() {
             />
             <IconButton
               style={{ height: '40px', marginLeft: '8px' }}
-              sx={{ color: '#ff700a' }}
+              sx={{ color: '#0a70ff' }}
               onClick={() => {
                 handleSubmit();
               }}
             >
-              <AddIcon sx={{ color: '#ff700a' }} />
+              <AddIcon sx={{ color: '#0a70ff' }} />
             </IconButton>
           </>
         );
