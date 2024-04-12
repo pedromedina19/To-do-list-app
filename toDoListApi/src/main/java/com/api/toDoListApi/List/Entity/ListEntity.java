@@ -14,8 +14,8 @@ public class ListEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @Column(name = "title")
-    private String title;
+    @Column(name = "titleList")
+    private String titleList;
 
     @Column(name = "listOrder")
     private Integer listOrder;
@@ -32,12 +32,12 @@ public class ListEntity {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getTitleList() {
+        return titleList;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitleList(String titleList) {
+        this.titleList = titleList;
     }
 
     public Integer getlistOrder() {

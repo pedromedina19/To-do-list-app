@@ -5,13 +5,13 @@ import jakarta.validation.constraints.NotEmpty;
 
 public class CreateListDTO {
     @NotEmpty(message = "O título da lista não pode ser vazio.")
-    private String title;
+    private String titleList;
 
-    public String getTitle() {
-        return title;
+    public String getTitleList() {
+        return titleList;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitleList(String titleList) {
+        this.titleList = titleList;
     }
 }

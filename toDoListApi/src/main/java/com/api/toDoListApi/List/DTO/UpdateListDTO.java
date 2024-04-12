@@ -1,15 +1,15 @@
 package com.api.toDoListApi.List.DTO;
 
 public class UpdateListDTO {
-    private String title;
+    private String titleList;
 
 
-    public String getTitle() {
-        return title;
+    public String getTitleList() {
+        return titleList;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitleList(String titleList) {
+        this.titleList = titleList;
     }
 
 }

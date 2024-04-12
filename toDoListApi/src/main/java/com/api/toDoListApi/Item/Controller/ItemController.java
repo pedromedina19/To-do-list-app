@@ -2,6 +2,7 @@ package com.api.toDoListApi.Item.Controller;
 
 import com.api.toDoListApi.Item.DTO.CreateItemDTO;
 import com.api.toDoListApi.Item.DTO.UpdateItemDTO;
+import com.api.toDoListApi.Item.DTO.UpdateOrderItemDTO;
 import com.api.toDoListApi.Item.Entity.ItemEntity;
 import com.api.toDoListApi.Item.Service.ItemService;
 import jakarta.validation.Valid;
@@ -26,14 +27,14 @@ public class ItemController {
         return ResponseEntity.status(HttpStatus.CREATED).body(newItem);
     }
 
-    @PutMapping("/{id}")
+    @PatchMapping("/{id}")
     public ResponseEntity<ItemEntity> updateItem(@PathVariable Long id, @Valid @RequestBody UpdateItemDTO updateItemDto) {
         ItemEntity updatedItem = itemService.updateItem(id, updateItemDto);
         return ResponseEntity.ok(updatedItem);
     }
-    @PutMapping("/order/{id}")
-    public ResponseEntity<ItemEntity> updateItemOrder(@PathVariable Long id, @RequestBody Map<String, Integer> json) {
-        ItemEntity updatedItem = itemService.updateItemOrder(id, json.get("itemOrder"));
+    @PatchMapping("/order/{id}")
+    public ResponseEntity<ItemEntity> updateItemOrder(@PathVariable Long id, @RequestBody UpdateOrderItemDTO dto) {
+        ItemEntity updatedItem = itemService.updateItemOrder(id, dto);
         return ResponseEntity.ok(updatedItem);
     }
 

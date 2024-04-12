@@ -3,6 +3,7 @@ package com.api.toDoListApi.Item.Service;
 import com.api.toDoListApi.Common.NotFoundException;
 import com.api.toDoListApi.Item.DTO.CreateItemDTO;
 import com.api.toDoListApi.Item.DTO.UpdateItemDTO;
+import com.api.toDoListApi.Item.DTO.UpdateOrderItemDTO;
 import com.api.toDoListApi.Item.Entity.ItemEntity;
 import com.api.toDoListApi.Item.Repository.ItemRepository;
 import com.api.toDoListApi.List.Entity.ListEntity;
@@ -25,7 +26,7 @@ public class ItemService {
     @Transactional
     public ItemEntity createItem(CreateItemDTO createItemDto) {
         ItemEntity newItem = new ItemEntity();
-        newItem.setTitle(createItemDto.getTitleItem());
+        newItem.setTitleItem(createItemDto.getTitleItem());
 
         // Obtenha a instância da lista correspondente ao ID
         ListEntity list = listRepository.findById(createItemDto.getListId())
@@ -46,16 +47,16 @@ public class ItemService {
     @Transactional
     public ItemEntity updateItem(Long id, UpdateItemDTO updateItemDto) {
         ItemEntity existingItem = itemRepository.findById(id).orElseThrow(() -> new NotFoundException("Item não encontrado."));
-        existingItem.setTitle(updateItemDto.getTitleItem());
+        existingItem.setTitleItem(updateItemDto.getTitleItem());
         existingItem.setDescription(updateItemDto.getDescription());
         existingItem.setStartDate(updateItemDto.getStartDate());
         existingItem.setFinalDate(updateItemDto.getFinalDate());
         return itemRepository.save(existingItem);
     }
     @Transactional
-    public ItemEntity updateItemOrder(Long id, Integer itemOrder) {
+    public ItemEntity updateItemOrder(Long id, UpdateOrderItemDTO dto) {
         // Validação da entrada do usuário
-        if (itemOrder < 0) {
+        if (dto.getCurrentOrder() < 0 || dto.getTargetOrder() < 0) {
             throw new IllegalArgumentException("A ordem do item não pode ser negativa.");
         }
 
@@ -63,13 +64,13 @@ public class ItemService {
         ItemEntity existingItem = itemRepository.findById(id).orElseThrow(() -> new NotFoundException("Item não encontrado."));
 
         // Atualiza a ordem do item
-        existingItem.setitemOrder(itemOrder);
+        existingItem.setitemOrder(dto.getTargetOrder());
 
         // Salva o item atualizado no repositório
         ItemEntity updatedItem = itemRepository.save(existingItem);
 
         // Lida com conflitos de ordem
-        List<ItemEntity> sameOrderItems = itemRepository.findByItemOrder(itemOrder);
+        List<ItemEntity> sameOrderItems = itemRepository.findByItemOrder(dto.getTargetOrder());
         for (ItemEntity item : sameOrderItems) {
             if (!item.getId().equals(id)) {
                 item.setitemOrder(item.getitemOrder() + 1);
@@ -79,9 +80,6 @@ public class ItemService {
 
         return updatedItem;
     }
-
-
-
 
     public ItemEntity getOneItem(Long id) {
         return itemRepository.findById(id).orElseThrow(() -> new NotFoundException("Item não encontrado."));

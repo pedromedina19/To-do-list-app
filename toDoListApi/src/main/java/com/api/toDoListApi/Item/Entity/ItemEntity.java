@@ -14,8 +14,8 @@ public class ItemEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @Column(name = "title")
-    private String title;
+    @Column(name = "titleItem")
+    private String titleItem;
 
     @Column(name = "description")
     private String description;
@@ -42,12 +42,12 @@ public class ItemEntity {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getTitleItem() {
+        return titleItem;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitleItem(String titleItem) {
+        this.titleItem = titleItem;
     }
 
     public String getDescription() {

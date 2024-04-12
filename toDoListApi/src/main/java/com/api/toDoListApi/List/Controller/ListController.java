@@ -2,6 +2,7 @@ package com.api.toDoListApi.List.Controller;
 
 import com.api.toDoListApi.List.DTO.CreateListDTO;
 import com.api.toDoListApi.List.DTO.UpdateListDTO;
+import com.api.toDoListApi.List.DTO.UpdateOrderListDTO;
 import com.api.toDoListApi.List.Entity.ListEntity;
 import com.api.toDoListApi.List.Service.ListService;
 import jakarta.validation.Valid;
@@ -27,16 +28,17 @@ public class ListController {
         return ResponseEntity.status(HttpStatus.CREATED).body(newList);
     }
 
-    @PutMapping("/{id}")
+    @PatchMapping("/{id}")
     public ResponseEntity<ListEntity> updateList(@PathVariable Long id, @Valid @RequestBody UpdateListDTO updateListDto) {
         ListEntity updatedList = listService.updateList(id, updateListDto);
         return ResponseEntity.ok(updatedList);
     }
-    @PutMapping("/order/{id}")
-    public ResponseEntity<ListEntity> updateListOrder(@PathVariable Long id, @RequestBody Map<String, Integer> json) {
-        ListEntity updatedList = listService.updateListOrder(id, json.get("listOrder"));
+    @PatchMapping("/order/{id}")
+    public ResponseEntity<ListEntity> updateListOrder(@PathVariable Long id, @RequestBody UpdateOrderListDTO dto) {
+        ListEntity updatedList = listService.updateListOrder(id, dto);
         return ResponseEntity.ok(updatedList);
     }
+
 
 
 
