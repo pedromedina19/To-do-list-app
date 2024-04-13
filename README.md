@@ -3,12 +3,12 @@
 - Primeiro deve-se rodar o docker-compose da api, nele está incluído o postgres, pgadmin4 e a api. Para rodar, basta entrar no diretório raiz da api em /toDoListApi
 - execute o seguinte comando para rodar o docker-compose:
 ```bash
-sudo docker-compose up
+sudo docker-compose up -d
 ``` 
 - SOMENTE após finalizar todas as instalções do Docker, entre na pasta do front-end e rode o docker-compose do front-end, a pasta é a /frontend
 - Novamente rode o comando:
 ```bash
-sudo docker-compose up
+sudo docker-compose up -d
 ```
 - Após finalizar, o site estaŕá acessível em: http://localhost:4200/
 - Observação: Ao editar um item, ou arrastar uma lista, atualize a página manualmente para que essas informações sejam carregadas. Isso será corrigido futuramente.
