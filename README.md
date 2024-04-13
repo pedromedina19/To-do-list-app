@@ -1,5 +1,27 @@
 # Documentação da API ToDoList
-
+### Essa é uma aplicação de lista de tarefas que inclui uma API feita em SpringBoot que se conecta a um banco de dados PostgreSQL, e um Front-end feito em Next.js. Para rodar tudo utilizaremos Dockers.
+- Primeiro deve-se rodar o docker-compose da api, nele está incluído o postgres, pgadmin4 e a api. Para rodar, basta entrar no diretório raiz da api em /toDoListApi
+- execute o seguinte comando para rodar o docker-compose:
+```bash
+sudo docker-compose up
+``` 
+- SOMENTE após finalizar todas as instalções do Docker, entre na pasta do front-end e rode o docker-compose do front-end, a pasta é a /frontend
+- Novamente rode o comando:
+```bash
+sudo docker-compose up
+```
+- Após finalizar, o site estaŕá acessível em: http://localhost:4200/
+### Observações:
+- Caso deseje entrar no banco de dados por meio do pg-admin precisará de algumas infoormações, como:
+- Primeiro entre no link do pgadmin que é: http://localhost:5431
+- Faça login.
+-     email: user@localhost.com
+-     senha: password
+- Terá um retorno como esse:
+![bd](https://github.com/pedromedina19/To-do-list-app/assets/87578151/065af47a-b155-47dc-978c-f158e66d14a1)
+<br>
+## Rotas da api
+<br><br>
 ## Listas
 
 ### POST /list
@@ -314,3 +336,8 @@ Exclui um item específico pelo ID.
 Resposta:
 
 Retorna um status 204 (No Content) se o item for excluído com sucesso.
+
+<br><br>
+## Front-end
+
+![image](https://github.com/pedromedina19/To-do-list-app/assets/87578151/fb69f5b4-3054-40dd-9df1-30e53db6c29b)
