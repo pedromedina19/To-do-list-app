@@ -5,12 +5,12 @@
 ```bash
 sudo docker-compose up -d
 ``` 
-- SOMENTE após finalizar todas as instalções do Docker, entre na pasta do front-end e rode o docker-compose do front-end, a pasta é a /frontend
+- SOMENTE após finalizar todas as instalações do Docker, entre na pasta do front-end e rode o docker-compose do front-end, a pasta é a /frontend
 - Novamente rode o comando:
 ```bash
 sudo docker-compose up -d
 ```
-- Após finalizar, o site estaŕá acessível em: http://localhost:4200/
+- Após finalizar, o site estará acessível em: http://localhost:4200/
 - Observação: Ao editar um item, ou arrastar uma lista, atualize a página manualmente para que essas informações sejam carregadas. Isso será corrigido futuramente.
 ### Observações:
 - Caso deseje entrar no banco de dados por meio do pg-admin precisará de algumas infoormações, como:
