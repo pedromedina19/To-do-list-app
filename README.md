@@ -341,3 +341,6 @@ Retorna um status 204 (No Content) se o item for excluído com sucesso.
 ## Front-end
 
 ![image](https://github.com/pedromedina19/To-do-list-app/assets/87578151/fb69f5b4-3054-40dd-9df1-30e53db6c29b)
+
+![image](https://github.com/pedromedina19/To-do-list-app/assets/87578151/d8aea1d8-3ee7-421d-a718-8115c52d7ca7)
+
