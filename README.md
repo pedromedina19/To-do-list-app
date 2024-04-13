@@ -11,6 +11,7 @@ sudo docker-compose up
 sudo docker-compose up
 ```
 - Após finalizar, o site estaŕá acessível em: http://localhost:4200/
+- Observação: Ao editar um item, ou arrastar uma lista, atualize a página manualmente para que essas informações sejam carregadas. Isso será corrigido futuramente.
 ### Observações:
 - Caso deseje entrar no banco de dados por meio do pg-admin precisará de algumas infoormações, como:
 - Primeiro entre no link do pgadmin que é: http://localhost:5431
