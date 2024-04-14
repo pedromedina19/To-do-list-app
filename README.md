@@ -31,13 +31,13 @@ Cria uma nova lista.
 
 Parâmetros do corpo da requisição:
 
-- `title` (obrigatório): O título da lista.
+- `titleList` (obrigatório): O título da lista.
 
 Exemplo de requisição:
 
 ```json
 {
-    "title": "Minha nova lista"
+    "titleList": "Minha nova lista"
 }
 ```
 
@@ -50,7 +50,7 @@ Exemplo de resposta:
 ```json
 {
     "id": 1,
-    "title": "Minha nova lista",
+    "titleList": "Minha nova lista",
     "listOrder": 0,
     "items": []
 }
@@ -62,13 +62,13 @@ Atualiza uma lista existente pelo ID.
 
 Parâmetros do corpo da requisição:
 
-- `title` (obrigatório): O novo título da lista.
+- `titleList` (obrigatório): O novo título da lista.
 
 Exemplo de requisição:
 
 ```json
 {
-    "title": "Título atualizado"
+    "titleList": "Título atualizado"
 }
 ```
 
@@ -81,7 +81,7 @@ Exemplo de resposta:
 ```json
 {
     "id": 1,
-    "title": "Título atualizado",
+    "titleList": "Título atualizado",
     "listOrder": 0,
     "items": []
 }
@@ -115,7 +115,7 @@ Retorna a lista atualizada com status HTTP 200 (OK).
 ```json
 {
     "id": 1,
-    "title": "Título atualizado",
+    "titleList": "Título atualizado",
     "listOrder": 1,
     "items": []
 }
@@ -135,13 +135,13 @@ Exemplo de resposta:
 [
     {
         "id": 1,
-        "title": "Título atualizado",
+        "titleList": "Título atualizado",
         "listOrder": 0,
         "items": []
     },
     {
         "id": 2,
-        "title": "Outra lista",
+        "titleList": "Outra lista",
         "listOrder": 1,
         "items": []
     }
@@ -161,7 +161,7 @@ Exemplo de resposta:
 ```json
 {
     "id": 1,
-    "title": "Título atualizado",
+    "titleList": "Título atualizado",
     "listOrder": 0,
     "items": []
 }
@@ -204,14 +204,14 @@ Exemplo de resposta:
 ```json
 {
     "id": 1,
-    "title": "Meu novo item",
+    "titleItem": "Meu novo item",
     "description": null,
     "startDate": null,
     "finalDate": null,
     "itemOrder": 0,
     "list": {
         "id": 1,
-        "title": "Título atualizado",
+        "titleList": "Título atualizado",
         "listOrder": 0
     }
 }
@@ -247,14 +247,14 @@ Exemplo de resposta:
 ```json
 {
     "id": 1,
-    "title": "Título atualizado",
+    "titleItem": "Título atualizado",
     "description": null,
     "startDate": null,
     "finalDate": null,
     "itemOrder": 1,
     "list": {
         "id": 1,
-        "title": "Título atualizado",
+        "titleList": "Título atualizado",
         "listOrder": 0
     }
 }
@@ -291,14 +291,14 @@ Retorna o item atualizado com status HTTP 200 (OK).
 ```json
 {
     "id": 1,
-    "title": "Título atualizado",
+    "titleItem": "Título atualizado",
     "description": null,
     "startDate": null,
     "finalDate": null,
     "itemOrder": 1,
     "list": {
         "id": 1,
-        "title": "Título atualizado",
+        "titleList": "Título atualizado",
         "listOrder": 0
     }
 }
@@ -317,14 +317,14 @@ Exemplo de resposta:
 ```json
 {
     "id": 1,
-    "title": "Título atualizado",
+    "titleItem": "Título atualizado",
     "description": null,
     "startDate": null,
     "finalDate": null,
     "itemOrder": 1,
     "list": {
         "id": 1,
-        "title": "Título atualizado",
+        "titleList": "Título atualizado",
         "listOrder": 0
     }
 }
